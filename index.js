@@ -20,7 +20,7 @@ app.use(methodOverride('_method'));
 // Connect to the database
 const db = new pg.Client({
   user: "postgres",
-  host: "localhost",
+  host: "127.0.0.1",
   database: "book",
   password: "16122000",
   port: 5432,
