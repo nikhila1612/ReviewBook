@@ -8,7 +8,7 @@ const fileURLToPath =require('url');
 const path=require('path');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT =  3000;
 
 app.set("views", __dirname + "/views");
 app.set('view engine', 'ejs'); // Set EJS as the template engine
@@ -20,7 +20,7 @@ app.use(methodOverride('_method'));
 // Connect to the database
 const db = new pg.Client({
   user: "postgres",
-  host: "127.0.0.1",
+  host: "localhost",
   database: "book",
   password: "16122000",
   port: 5432,
