@@ -30,7 +30,7 @@ ReviewBook is a web application built with Node.js, Express, PostgreSQL, and EJS
 1. Clone the repository:
 
    ```
-   git clone 
+   git clone https://github.com/nikhila1612/ReviewBook
    ```
 
 2. Install dependencies:
