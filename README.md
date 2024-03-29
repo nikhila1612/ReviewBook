@@ -36,7 +36,7 @@ ReviewBook is a web application built with Node.js, Express, PostgreSQL, and EJS
 2. Install dependencies:
 
    ```
-   cd project-directory
+   cd ReviewBook
    npm install
    ```
 
