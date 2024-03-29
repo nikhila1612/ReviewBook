@@ -1,19 +1,15 @@
-
 const express = require('express');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const axios = require('axios');
 const pg =require('pg');
-const fileURLToPath =require('url');
-const path=require('path');
 
 const app = express();
 const PORT =  3000;
 
-app.set("views", __dirname + "/views");
 app.set('view engine', 'ejs'); // Set EJS as the template engine
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(__dirname + "/public"));// Serve static files from the 'public' directory
+app.use(express.static("/public"));// Serve static files from the 'public' directory
 
 
 app.use(methodOverride('_method'));
