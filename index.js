@@ -1,24 +1,30 @@
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
-
-const db = require('./models/db');
+const axios = require('axios');
+const pg =require('pg');
+const fileURLToPath =require('url');
+const path=require('path');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-const axios = require('axios');
-
-
-
+app.set("views", __dirname + "/views");
 app.set('view engine', 'ejs'); // Set EJS as the template engine
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static('public')); // Serve static files from the 'public' directory
+app.use(express.static(__dirname + "/public"));// Serve static files from the 'public' directory
 
 
 app.use(methodOverride('_method'));
 // Connect to the database
-
+const db = new pg.Client({
+  user: "postgres",
+  host: "localhost",
+  database: "book",
+  password: "16122000",
+  port: 5432,
+});
 db.connect()
   .then(() => {
     console.log('Connected to the database');
